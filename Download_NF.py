@@ -13,8 +13,7 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-#from selenium.webdriver.common.action_chains import ActionChains
-#from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
+
 
 pasta = r"C:\Users\usuario\documents\pasta"                # pasta do Relatorio de NF´s
 localdestino = r"C:\Users\usuario\documents\pasta\pasta"   # Diretorio p/ armazenar downloads
@@ -23,9 +22,9 @@ link = 'https://palmasto.webiss.com.br/externo/nfse/visualizar/NUM_CNPJ'
 janela = Tk()
 
 janela.withdraw()
-janela.attributes("-topmost", True) #manter no topo
+janela.attributes("-topmost", True)
 
-# Exiba a caixa de diálogo para selecionar o arquivo
+# Exiba a caixa para selecionar o arquivo
 Arquivo_Excel = askopenfilename(title="Selecionar Arquivo oom a Lista de NF-e", initialdir=pasta, filetypes=[('Arquivo Excel', '*.xlsx')])
 
 janela.destroy()
@@ -39,7 +38,7 @@ tabela = pd.read_excel(excel_file, sheet_name=ultima_aba)
 total_linhas = tabela.shape[0]
 print("Total de Linhas:", total_linhas)
 
-#Configuração do Selenium para o Microsoft Edge baseado no Chromium
+
 edge_options = webdriver.EdgeOptions()
 edge_options.use_chromium = True
 
@@ -56,7 +55,6 @@ prefs = {
 }
 edge_options.add_experimental_option('prefs', prefs)
 
-# Criar uma instância do navegador Microsoft Edge
 driver = webdriver.Edge(options=edge_options)
 
 

@@ -115,9 +115,9 @@ for i in range(linha, total_linhas):
 
 # Verificação geral
 for i in range(total_linhas):
-    NF = tabela.iloc[i, 11]  # A primeira coluna tem índice 0
-    CV = tabela.iloc[i, 10]  # A segunda coluna tem índice 1
-    RPS = tabela.iloc[i, 4] 
+    NF = tabela.iloc[i, 11]  # Coluna L
+    CV = tabela.iloc[i, 10]  # Coluna K
+    RPS = tabela.iloc[i, 4]  # Coluna E   Opcional
     
     arquivo_validate = 'NotaEletronica_'+str(NF)+'_'+str(CV)+'.pdf'
     if arquivo_validate not in os.listdir(localdestino):
